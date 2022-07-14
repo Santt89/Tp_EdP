@@ -46,7 +46,7 @@ function es_punto {
        	CADENA=$1
        	LARGO_CADENA=${#CADENA}
        	ULTIMO=$(echo $CADENA | cut -c ${#CADENA})
-       	if [[ $ULTIMO == "." ]]
+       	if [[ $ULTIMO == [.?!] ]]
        	then
        		echo "True"
        	else
