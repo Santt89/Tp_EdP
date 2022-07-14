@@ -1,10 +1,7 @@
 #!/bin/bash
 
-#source /home/santiago/ejercicos_EdP/statsUsageWords.sh 
-
 ARCHIVO=$1
 MOSTRAR_ARCHIVO=$(cat $ARCHIVO)
-
 
 
 
@@ -40,10 +37,7 @@ function mayuscula {
 		echo "False"
 	fi
 
-
 }
-
-
 
 
 #compara si dos cadenas son iguales
@@ -61,7 +55,7 @@ function son_iguales {
 
 
 
-#recibe una cadena y saca la primera letra
+#recibe una cadena y saca el primer caracter
 function sacar_primer {
 	CADENA=$1
 	CADENA_SIN_PRIMERA=$(echo $CADENA | sed -e 's/^.//')
