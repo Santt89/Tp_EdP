@@ -1,10 +1,12 @@
 #!/bin/bash
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6b6ca0c3a8a3277590500edb00e1b0cd64e72b36
 ARCHIVO=$1
 MOSTRAR_ARCHIVO=$(cat $ARCHIVO)
-
 
 
 
@@ -40,13 +42,16 @@ function mayuscula {
 		echo "False"
 	fi
 
-
 }
 
 
+<<<<<<< HEAD
 
 
 #recibe dos cadenas y las compara. Devuelve True si son iguales, False en caso contrario.
+=======
+#compara si dos cadenas son iguales
+>>>>>>> 6b6ca0c3a8a3277590500edb00e1b0cd64e72b36
 function son_iguales {
 	CADENA1=$1
 	CADENA2=$2
@@ -61,7 +66,7 @@ function son_iguales {
 
 
 
-#recibe una cadena y saca la primera letra
+#recibe una cadena y saca el primer caracter
 function sacar_primer {
 	CADENA=$1
 	CADENA_SIN_PRIMERA=$(echo $CADENA | sed -e 's/^.//')
