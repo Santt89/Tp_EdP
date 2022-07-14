@@ -55,11 +55,6 @@ function cuantas_veces {
 
 	for PALABRAS in $TEXTO
 	do
-		#pasamos las palabras a minusculas para no tenes inconvenientes
-
-		PALABRA=$(echo $PALABRA | tr '[:upper:]' '[:lower:]')
-		PALABRAS=$(echo $PALABRAS | tr '[:upper:]' '[:lower:]')
-	
 		if [ $PALABRA == $PALABRAS ]
 		then
 			((CONTADOR ++))
