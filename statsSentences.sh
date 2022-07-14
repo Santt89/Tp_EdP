@@ -46,7 +46,7 @@ function es_punto {
        	CADENA=$1
        	LARGO_CADENA=${#CADENA}
        	ULTIMO=$(echo $CADENA | cut -c ${#CADENA})
-       	if [[ $ULTIMO == "." ]]
+       	if [[ $ULTIMO == [.?!] ]]
        	then
        		echo "True"
        	else
@@ -55,8 +55,6 @@ function es_punto {
 
 }
 
-#PALABRA=$(elimina_tildes "específico.")
-#es_punto $PALABRA
 
 #funcion que compara dos longitudes de cadenas. Devuelve True si la primera cadena pasada como argumento tiene mayor o igual longitud que la segunda.
 
@@ -127,16 +125,20 @@ function principal {
        	fi
 
 	done
+
+
+
+
+	#calculamos el promedio de longitud 
+	PROMEDIO_DE_LONGITUD=$(($SUMA / $CANT_ORACIONES))
+
+
+	echo "La oracion mas larga es: $ORACION_MAS_LARGA"
+	echo " ------------------------"
+	echo "La oracion mas corta es: $ORACION_MAS_CORTA"
+	echo "-------------------------"
+	echo "El promedio de longitud de oraciones es: $PROMEDIO_DE_LONGITUD"
+
 }
 
 principal $ARCHIVO
-
-#calculamos el promedio de longitud 
-PROMEDIO=$(($SUMA / $CANT_ORACIONES))
-
-
-echo "La oracion mas larga es: $ORACION_MAS_LARGA"
-echo " ------------------------"
-echo "La oracion mas corta es: $ORACION_MAS_CORTA"
-echo "-------------------------"
-echo "El promedio de longitud de oraciones es: $PROMEDIO"

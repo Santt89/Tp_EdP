@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#source /home/santiago/ejercicos_EdP/statsUsageWords.sh 
+
 
 ARCHIVO=$1
 MOSTRAR_ARCHIVO=$(cat $ARCHIVO)
@@ -46,7 +46,7 @@ function mayuscula {
 
 
 
-#compara si dos cadenas son iguales
+#recibe dos cadenas y las compara. Devuelve True si son iguales, False en caso contrario.
 function son_iguales {
 	CADENA1=$1
 	CADENA2=$2
