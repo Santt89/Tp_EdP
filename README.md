@@ -8,7 +8,7 @@ El Dockerfile sera el encargado de generar un contenedor que al ejecutarse prese
 
 En primer lugar debemos clonar el repositorio en nuestro equipo.
 
-{% filename %}command-line{% endfilename %}
+
 
     $ git clone https://github.com/Santt89/Tp_EdP.git
     Clonando en 'Tp_EdP'...
