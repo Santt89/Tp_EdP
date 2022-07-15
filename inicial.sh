@@ -13,7 +13,7 @@ do
                 break
                 ;;
         "statsUsageWords.sh")
-                bash /root/scripts/statsUsageWords.sh.sh /root/scripts/texto
+                bash /root/scripts/statsUsageWords.sh /root/scripts/texto
                 break
                 ;;
         "findNames.sh")
