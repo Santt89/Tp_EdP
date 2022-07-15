@@ -96,7 +96,7 @@ Una vez creado el contenedor con nuestra imagen, lo correremos y el mismo nos pr
     2) statsUsageWords.sh	 4) statsSentences.sh
     Introduzca la opcion que desea utilizar: 5
     
-    La cantidad de lineas en blanco que tiene el archivo es: 2
+    La cantidad de lineas en blanco que tiene el archivo es: 12
 
  
  
