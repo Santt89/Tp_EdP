@@ -49,6 +49,7 @@ Una vez clonado el repositorio en nuestro equipo, obtendremos el directorio Tp_E
 
 
     $ cd Tp_EdP/
+    $ ls
     Dockerfile README.md scripts 
     
     
