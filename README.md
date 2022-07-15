@@ -1,4 +1,4 @@
-## Menu de mini aplicaciones para el analisis de texto.
+## Menu de mini aplicaciones para el analisis de texto. (mediante scripts de Bash)
 
 ## Como funciona ?
 
