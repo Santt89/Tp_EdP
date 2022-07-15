@@ -1,6 +1,6 @@
 FROM ubuntu
 
 RUN apt update && apt upgrade -y
-ADD ["scripts","/root/scripts"]
+ADD ["Tp_EdP","/root/Tp_EdP"]
 
-ENTRYPOINT ["/bin/bash","/root/scripts/inicial.sh"]
+ENTRYPOINT ["/bin/bash","/root/Tp_EdP/inicial.sh"]
