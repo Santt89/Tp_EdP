@@ -4,8 +4,8 @@
 
 En el actual repositorio encontraremos un Dockerfile,y una carpeta llamada scripts.
 
-El Dockerfile sera el encargado de generar un contenedor que al ejecutarse presente un menu de opciones de filtrados de un texto dado.
-En  la carpeta llamada scipts se encontraran los siguientes scripts de Bash:
+El Dockerfile será el encargado de generar un contenedor que al ejecutarse presente un menu de opciones de filtrado de un texto dado.
+En la carpeta llamada scripts se encontrarán los siguientes scripts de Bash:
 
 
 `statsWords.sh` : indicador estadístico de longitud de palabras (la más corta, la más larga y el
@@ -26,7 +26,7 @@ promedio de longitud).
 `blankLinesCounter`.sh
 Contador de líneas en blanco.
 
-Ademas, se encontrara un archivo llamado `texto` que sera el texto a analizar.
+Además, se encontrará un archivo llamado `texto` que será el texto a analizar.
 
 ## Como funciona ?
 
@@ -85,7 +85,7 @@ Una vez creado el contenedor con nuestra imagen, lo correremos y el mismo nos pr
     Introduzca la opcion que desea utilizar:
     
     
- Por ejemplo: si escojemos la opcion 5, nos devolvera la cantidad de lineas en blanco del texto.
+ Por ejemplo: si escojemos la opcion 5, nos devolverá la cantidad de lineas en blanco del texto.
  
  
 
