@@ -1,10 +1,5 @@
 #!/bin/bash
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 6b6ca0c3a8a3277590500edb00e1b0cd64e72b36
 ARCHIVO=$1
 MOSTRAR_ARCHIVO=$(cat $ARCHIVO)
 
@@ -45,13 +40,11 @@ function mayuscula {
 }
 
 
-<<<<<<< HEAD
+
 
 
 #recibe dos cadenas y las compara. Devuelve True si son iguales, False en caso contrario.
-=======
-#compara si dos cadenas son iguales
->>>>>>> 6b6ca0c3a8a3277590500edb00e1b0cd64e72b36
+
 function son_iguales {
 	CADENA1=$1
 	CADENA2=$2
