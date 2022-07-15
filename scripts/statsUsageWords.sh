@@ -45,12 +45,13 @@ function elimina_especiales {
 }
 
 
+ORDENADAS=$(elimina_especiales $ARCHIVO | sort )
 
 
 #funcion que retorna la cantidad de veces que aparece una palabra en un texto.Recibe dos argumentos, Una palabra y un texto
 function cuantas_veces {
 	PALABRA=$1
-	TEXTO=$(elimina_especiales $2)
+	TEXTO=$ORDENADAS
 	CONTADOR=0
 
 	for PALABRAS in $TEXTO
@@ -69,94 +70,82 @@ function cuantas_veces {
 
 
 
-#funcion que crea una lista ordenada(de mayor a menor) con las cantidades de veces que aparecen las palabras de longitud mayoro o igual a 4 en el texto
-function cantidad_veces { 
-	declare -a apariciones=()
-	PALABRAS_USADAS="s"
-	CANTIDAD=0
-	TEXTO=$(elimina_especiales $1)
-
-	for PALABRA in $TEXTO
+#esta funcion devovlera el numero de la palabra que mas veces se repite en el texto
+function mayor_repeticion {
+	MAYOR=0
+	CONTADOR=0
+	for PALABRA in $ORDENADAS
 	do
-		if (mas_de_4 $PALABRA)
-		then
-			if [[ ! "$PALABRAS_USADAS" =~ "$PALABRA" ]]
+		for PALABRITA in $ORDENADAS
+		do
+			
+			if [[ $PALABRA == $PALABRITA ]]
 			then
-				PALABRAS_USADAS=$PALABRAS_USADAS$PALABRA
-
-
-				CANTIDAD=$(cuantas_veces $PALABRA $ARCHIVO)
-				apariciones=("${apariciones[@]}" "$CANTIDAD")
+				((CONTADOR++))
+				
 			fi
+
+		done
+
+		if [[ $MAYOR -le $CONTADOR ]]
+		then
+			MAYOR=$CONTADOR
 		fi
+
+		CONTADOR=0
 	done
 
-		 apariciones_sorted=$(for i in ${apariciones[@]} ; do echo $i; done | sort -r)
-        	echo ${apariciones_sorted[@]}
+	echo $MAYOR
 
-	
 }
-
 
 #funcion para comprobar si una cadena esta dentro de otra. Recibe dos argumentos, la cedena y la subcadena.
 function esta_dentro { 
-	if [[ $1 =~ "$2" ]]
-	then
-		echo "True"
-	else
-		echo "False"
-	fi
+        if [[ $1 =~ "$2" ]]
+        then
+                echo "True"
+        else
+                echo "False"
+        fi
  }
 
+ 
 
 
-#la funcion dira cuantas veces se utilizo cada palabra en orden
-function cuantas_veces_se_uso {
-	PUESTO=1
-
-	CANTIDAD_PALABRAS="s"
-	PALABRAS_USADAS="s"
-
-	PALABRAS_LARGAS=$(mayores_a_4 $1)
-	LISTA_PALABRAS=$(elimina_especiales $1)
-	CANTIDAD=$(cantidad_veces $1)
-
-	for NUMERO in $CANTIDAD
+#funcion que imprimira un top 10 de las palabras mas usadas
+function top_10 {
+	MAYOR=$(mayor_repeticion)
+	PALABRAS_USADAS="."
+	TOP=1
+	while [[ $MAYOR -ge 0 ]]
 	do
-		CANTIDAD_PALABRAS="a"
-		for PALABRA in $LISTA_PALABRAS
+		for PALABRA in $ORDENADAS
 		do
-			#para que solo imprima los primeros 10 lugares
-			if [ $PUESTO -le 10 ]
+			if [[ $TOP -gt 10 ]]
 			then
-				CHECK_PALABRA_USADA=$(esta_dentro $PALABRAS_USADAS $PALABRA)
-				if [[  $CHECK_PALABRA_USADA == "False" ]]
+				break
+			else
+				CHECK=$(esta_dentro $PALABRAS_USADAS $PALABRA)
+				if [[ $CHECK == "False" ]]
 				then
-					CHECK_PALABRA=$(esta_dentro $CANTIDAD_PALABRAS $PALABRA)
-					if [[ $CHECK_PALABRA == "False" ]]
+					PALABRAS_USADAS=$PALABRAS_USADAS$PALABRA
+
+					REPETICION=$(cuantas_veces $PALABRA $ORDENADAS)
+
+					if [[ $REPETICION == $MAYOR ]]
 					then
-						CANTIDAD_PALABRAS=$CANTIDAD_PALABRAS$PALABRA
-						VECES=$(cuantas_veces $PALABRA $1)      
-                                		if [ $VECES -eq $NUMERO ]
-                                		then
-                                    			echo "Top $PUESTO: $PALABRA. Apariciones: $NUMERO"
-				    			PALABRAS_USADAS=$PALABRAS_USADAS$PALABRA
-							((PUESTO++))
-					
-                         	   		fi
+						echo "Top $TOP: $PALABRA con $REPETICION apariciones."
+						((TOP++))
 					fi
 				fi
-			else
-				break
 			fi
-		done		
-	done	
-
+		done
+	
+		MAYOR=$(($MAYOR - 1))
+		PALABRAS_USADAS="."
+	done
+	
 }
 
-cuantas_veces_se_uso $ARCHIVO	
-
-
-
-
+top_10
 
