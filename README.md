@@ -8,23 +8,24 @@ El Dockerfile será el encargado de generar un contenedor que al ejecutarse pres
 En la carpeta llamada scripts se encontrarán los siguientes scripts de Bash:
 
 
-`statsWords.sh` : indicador estadístico de longitud de palabras (la más corta, la más larga y el
+`statsWords.sh` : Indicador estadístico de longitud de palabras (la más corta, la más larga y el
 promedio de longitud).
 
-`statsUsageWords.sh`: indicador estadístico de uso de palabras, deben ser de al menos 4(cuatro)
+`statsUsageWords.sh`: Indicador estadístico de uso de palabras, deben ser de al menos 4(cuatro)
 letras. (mostrar un Top Ten de estas palabras ordenadas desde la que tiene
 más apariciones a la que tiene menos). Es decir, filtrar las palabras que
 tengan al menos 4 letras y de éstas, elegir las 10 más usadas.
 
-`findNames.sh`: identificación de nombres propios (se identifican sólo si están en este formato
+`findNames.sh`: Identificación de nombres propios (se identifican sólo si están en este formato
 Nnnnnnnnn), aunque la palabra no sea un nombre propio realmente.
 Ejemplos: Mateo, Estonoesunnombre, Ana.
 
-`statsSentences.sh`: indicador estadístico de longitud de oraciones (la más corta, la más larga y el
+`statsSentences.sh`: Indicador estadístico de longitud de oraciones (la más corta, la más larga y el
 promedio de longitud).
 
-`blankLinesCounter`.sh
-Contador de líneas en blanco.
+`blankLinesCounter.sh`: Contador de líneas en blanco.
+
+`inicial.sh`: Es el encargado de presentar el menu para escojer y luego ejecutar el script seleccionado.
 
 Además, se encontrará un archivo llamado `texto` que será el texto a analizar.
 
