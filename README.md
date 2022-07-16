@@ -1,8 +1,10 @@
-## Menu de mini aplicaciones para el analisis de texto. (mediante scripts de Bash)
+## Menu de mini aplicaciones para el analisis de texto.
+
+Este menu será ejecutado mediante scripts de Bash.
 
 ## Que nos ofrece ?
 
-En el actual repositorio encontraremos un Dockerfile,y una carpeta llamada scripts.
+En el actual repositorio encontraremos un Dockerfile, y una carpeta llamada scripts.
 
 El Dockerfile será el encargado de generar un contenedor que al ejecutarse presente un menu de opciones de filtrado de un texto dado.
 En la carpeta llamada scripts se encontrarán los siguientes scripts de Bash:
@@ -68,8 +70,6 @@ Ahora debemos, a traves del Dockerfile, construir una imagen de Ubuntu para ejec
     
     
 Podemos vizualisar las imagenes que tenemos creadas
-
-{% filename %}command-line{% endfilename %}
 
     $ docker images
 
