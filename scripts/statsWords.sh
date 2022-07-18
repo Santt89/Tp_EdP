@@ -10,7 +10,7 @@ ARCHIVO=$1
 
 
 
-#funcion que compara dos longitudes de palabras. Devuelve True si la primera palabra pasada como argumento tiene mayor o igual longitud que la segunda.
+#funcion que compara dos longitudes de cadenas de strings. Devuelve True si la primera cadena pasada como argumento tiene mayor o igual longitud que la segunda.
 function compara_longitud {
 	PALABRA1=$1
 	PALABRA2=$2
@@ -25,7 +25,7 @@ function compara_longitud {
 
 
 
-#funcion que recibe un archivo de texto. Hace uso de las funcines definidas anteriormente, e imprime la palabra mas larga, mas corta y el promedio de longitud.
+#funcion que recibe un archivo de texto. Hace uso de la funcion compara_longitud definida anteriormente, e imprime la palabra mas larga, mas corta y el promedio de longitud.
 function principal {
 	#Utilizaremos las variables SUMA Y CANT_PALABRAS para calcular el promedio de longitud
 	SUMA=0

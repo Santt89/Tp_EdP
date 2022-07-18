@@ -1,12 +1,12 @@
 #!/bin/bash
 
-
+#definimos variables
 ARCHIVO=$1
 MOSTRAR_ARCHIVO=$(cat $ARCHIVO)
 
 
 
-#elimina puntos y caracteres especiales de una cadena 
+#funcion que recibe un archivo de texto e imprime cada palabra, en caso que tenga simbolos de puntuacion se los quitara. 
 function elimina_especiales {
       	LISTADO_PALABRAS=$(cat $1)
 
@@ -20,7 +20,7 @@ function elimina_especiales {
 
 
 
-#recibe una cadena y la transforma a minuscula
+#funcion que recibe una cadena y la transforma en minusculas.
 function minusculas {
 	CADENA=$1
 	CADENA_MINUSCULA=$(echo $CADENA | tr  [:upper:] [:lower:])
@@ -28,7 +28,7 @@ function minusculas {
 
 }
 
-#recibe una letra y verifica si es mayuscula
+#funcion que recibe una letra y verifica si es mayuscula.
 function mayuscula {
         STRING=$1
        	if [[ $STRING == [A-Z] ]]
@@ -43,7 +43,7 @@ function mayuscula {
 
 
 
-#recibe dos cadenas y las compara. Devuelve True si son iguales, False en caso contrario.
+#funcion que recibe dos cadenas y las compara. Devuelve True si son iguales, False en caso contrario.
 function son_iguales {
 	CADENA1=$1
 	CADENA2=$2
@@ -58,7 +58,7 @@ function son_iguales {
 
 
 
-#recibe una cadena y saca el primer caracter
+#funcion que recibe una cadena y la devuelve sin el primer caracter.
 function sacar_primer {
 	CADENA=$1
 	CADENA_SIN_PRIMERA=$(echo $CADENA | sed -e 's/^.//')
@@ -68,7 +68,7 @@ function sacar_primer {
 
 
 
-#esta funcion recibe una cadena y devuelve el primer caracter
+#funcion que recibe una cadena y devuelve el primer caracter
 function primer_caracter {
 	
 	CADENA=$1

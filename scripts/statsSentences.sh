@@ -1,16 +1,16 @@
 #!/bin/bash
 
-ARCHIVO=$1
+
 
 
 #definimos variables
 ORACION_MAS_CORTA=""
 ORACION_MAS_LARGA=""
 PROMEDIO_DE_LONGITUD=0
+ARCHIVO=$1
 
 
-
-#funcion que toma dos cadenas y las concatena dejando un especio entre ellas
+#funcion que toma dos cadenas y las concatena dejando un especio entre ellas.
 function concatenar {
 	CADENA1=$1
 	CADENA2=$2
@@ -20,7 +20,7 @@ function concatenar {
 
 }
 
-#funcion que devuelve el largo de una cadena
+#funcion que devuelve que recibe una cadena y devuelve su longitud.
 function largo {
        CADENA=$1
        LARGO=${#CADENA}
@@ -78,7 +78,7 @@ function compara_longitud {
 
  
 
-#Utilizaremos las variables SUMA Y CANT_PALABRAS para calcular el promedio de longitud
+#funcion que utiliza las funciones definidas anteriormente y calcula cual es la oracion mas larga, la mas corta y cual es el promedio de caracteres.
 function principal {
 	SUMA=0
 	CANT_ORACIONES=0
