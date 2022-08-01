@@ -44,7 +44,7 @@ function elimina_especiales {
 
 }
 
-
+#variable en la que se guardan las palabras recibidas de la funcion elimina_especiales en forma ordenada.
 ORDENADAS=$(elimina_especiales $ARCHIVO | sort )
 
 
