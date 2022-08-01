@@ -6,17 +6,16 @@ Este menu será ejecutado mediante scripts de Bash.
 
 En el actual repositorio encontraremos un Dockerfile, y una carpeta llamada scripts.
 
-El Dockerfile será el encargado de generar un contenedor que al ejecutarse presente un menu de opciones de filtrado de un texto dado.
+El Dockerfile será el encargado de generar un contenedor con una imagen Ubuntu que al ejecutarse presente un menu de opciones de filtrado de un texto dado.
 En la carpeta llamada scripts se encontrarán los siguientes scripts de Bash:
 
 
 `statsWords.sh` : Indicador estadístico de longitud de palabras (la más corta, la más larga y el
 promedio de longitud).
 
-`statsUsageWords.sh`: Indicador estadístico de uso de palabras, deben ser de al menos 4(cuatro)
-letras. (mostrar un Top Ten de estas palabras ordenadas desde la que tiene
-más apariciones a la que tiene menos). Es decir, filtrar las palabras que
-tengan al menos 4 letras y de éstas, elegir las 10 más usadas.
+`statsUsageWords.sh`: Indicador estadístico de uso de palabras de al menos 4(cuatro)
+letras. Muestra un Top Ten de estas palabras ordenadas desde la que tiene
+más apariciones a la que tiene menos.
 
 `findNames.sh`: Identificación de nombres propios (se identifican sólo si están en este formato
 Nnnnnnnnn), aunque la palabra no sea un nombre propio realmente.
