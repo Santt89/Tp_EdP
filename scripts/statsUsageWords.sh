@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+#definimos variables
 ARCHIVO=$1
 MOSTRAR_ARCHIVO=$(cat $ARCHIVO)
 
@@ -44,7 +44,7 @@ function elimina_especiales {
 
 }
 
-
+#variable en la que se guardan las palabras recibidas de la funcion elimina_especiales en forma ordenada.
 ORDENADAS=$(elimina_especiales $ARCHIVO | sort )
 
 
@@ -142,10 +142,11 @@ function top_10 {
 		done
 	
 		MAYOR=$(($MAYOR - 1))
+
+		#reseteamos la variable para poder iterar nuevamente sobre las palabras
 		PALABRAS_USADAS="."
 	done
 	
 }
 
 top_10
-
