@@ -83,7 +83,7 @@ function empieza_con_mayus {
 	LISTADO_PALABRAS=$(elimina_especiales $1)
 	for PALABRA in $LISTADO_PALABRAS
 	do
-		if [ ${#PALABRA} -gt 1 ]
+		if [ ${#PALABRA} -gt 2 ]
 		then
 		
 			PRIMER_CARACTER=$(primer_caracter $PALABRA)
