@@ -83,18 +83,21 @@ function empieza_con_mayus {
 	LISTADO_PALABRAS=$(elimina_especiales $1)
 	for PALABRA in $LISTADO_PALABRAS
 	do
-		
-		PRIMER_CARACTER=$(primer_caracter $PALABRA)
-		PRIMER_CARACTER_MAY=$(mayuscula $PRIMER_CARACTER)
-
-		if [[ $PRIMER_CARACTER_MAY == "True" ]]
+		if [ ${#PALABRA} -gt 1 ]
 		then
-			CADENA_SIN_PRIMER=$(sacar_primer $PALABRA)
-			CADENA_MAYUS=$(minusculas $CADENA_SIN_PRIMER)
-			SON_IGUALES=$(son_iguales $CADENA_SIN_PRIMER $CADENA_MAYUS)
-			if [[ $SON_IGUALES == "True" ]]
+		
+			PRIMER_CARACTER=$(primer_caracter $PALABRA)
+			PRIMER_CARACTER_MAY=$(mayuscula $PRIMER_CARACTER)
+
+			if [[ $PRIMER_CARACTER_MAY == "True" ]]
 			then
-				echo $PALABRA
+				CADENA_SIN_PRIMER=$(sacar_primer $PALABRA)
+				CADENA_MAYUS=$(minusculas $CADENA_SIN_PRIMER)
+				SON_IGUALES=$(son_iguales $CADENA_SIN_PRIMER $CADENA_MAYUS)
+				if [[ $SON_IGUALES == "True" ]]
+				then
+					echo $PALABRA
+				fi
 			fi
 		fi
 	done
