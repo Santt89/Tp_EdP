@@ -20,7 +20,7 @@ function concatenar {
 
 }
 
-#funcion que devuelve que recibe una cadena y devuelve su longitud.
+#funcion que recibe una cadena y devuelve su longitud.
 function largo {
        CADENA=$1
        LARGO=${#CADENA}
