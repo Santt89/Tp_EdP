@@ -2,7 +2,6 @@
 
 
 
-
 #definimos variables
 ORACION_MAS_CORTA=""
 ORACION_MAS_LARGA=""
@@ -10,27 +9,8 @@ PROMEDIO_DE_LONGITUD=0
 ARCHIVO=$1
 
 
-#funcion que toma dos cadenas y las concatena dejando un especio entre ellas.
-function concatenar {
-	CADENA1=$1
-	CADENA2=$2
 
-	CADENA_UNIDA=$1" "$2
-	echo $CADENA_UNIDA
-
-}
-
-#funcion que recibe una cadena y devuelve su longitud.
-function largo {
-       CADENA=$1
-       LARGO=${#CADENA}
-       echo $LARGO
-
-}
-
-
-
-#esta funcion recibe una palabra y en caso de tener tildes, devuelve la misma sin tildes y con el caracter que lo tenia duplicado (no afectara en nada al uso que le daremos)
+#funcion que recibe una palabra y en caso de tener tildes, devuelve la misma sin tildes y con el caracter que lo tenia duplicado (no afectara en nada al uso que le daremos)
 function elimina_tildes {
        PALABRA=$1
        PAL_SIN_TILDES=$(echo $PALABRA | tr '[áÁ]' '[a]' | tr '[éÉ]' 'e' | tr '[íÍ]' 'i' | tr '[óÓ]' 'o' | tr '[úÚ]' 'u')
@@ -72,7 +52,6 @@ function compara_longitud {
 	       echo "False"
        fi
        	
-
 
 }
 
